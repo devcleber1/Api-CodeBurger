@@ -19,7 +19,6 @@ class CategoryController {
       where: { name }
     })
 
-    /* Validação se o usuário existe */
     if (categoryExist) {
       return response.status(409).json({ error: 'Category already exists' })
     }
