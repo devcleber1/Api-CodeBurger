@@ -3,8 +3,8 @@
 import Sequelize from 'sequelize'
 import User from '../app/models/Users'
 import configDataBase from '../config/database'
-
-const models = [User] // recebendo os models
+import Product from '../app/models/Product'
+const models = [User, Product] // recebendo os models
 
 class Database {
   constructor () {
