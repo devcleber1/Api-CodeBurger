@@ -6,19 +6,19 @@
 
 [Technologies Used](#Technologies-used)
 
-[Usuário admin logado](#Usuário-admin-logado)
+[Admin user logged in](#Admin-user-logged-in)
 
-[Rota categorias](#Rota-categorias)
+[Routes Categories](#Route-categories)
 
-[Rota produtos](#Rota-produtos)
+[Product route](#Productroute)
 
-[Rota pedidos](#Rota-pedidos)
+[Order route](#Orderroute)
 
-[Usuário cliente logado](#Usuário-cliente-logado)
+[Client user logged in](#Client-user-logged-in)
 
-[Rota pedidos cliente](#Rota-pedidos-cliente)
+[Customer order route](#Customer-order-route)
 
-[Desenvolvedor](#desenvolvedor)
+[Developer](#Devveloper)
 
 ## Installation
 Install the following tools: 
@@ -102,126 +102,137 @@ yarn dev
 ```
 And the application will be running.
 
-# Como usar
+# How to use
 
-abra o insomnia crie uma rota POST e mande pelo body: name,email,password e admin sendo true(para criar um administrador) e false (para usuário cliente).Usando url
+Open insomnia create a POST route and send through the body: name,email,password and admin being true (to create an administrator) and false (for client user).Using url:
 ```
 http://localhost:3001/users
 ```
 
 <img src="https://github.com/stanley-rodrigues/picForReadme/blob/main/api%20Devburguer/user.png"/>
 
-## Usuário admin logado
+## Admin user logged in
 
-Crie uma rota POST e mande pelo body: email e password. Ao logar será gerado um token (guarde pois será utilizados nas demais rotas).Usando url.
+Create a POST route and send the body: email and password. When you log in, a token will be generated (save it as it will be used for other routes).Using url:
 ```
 http://localhost:3001/sessions
 ```
 
 <img src="https://github.com/stanley-rodrigues/picForReadme/blob/main/api%20Devburguer/login.png"/>
 
-### Rota categorias
+### Route categories
 
-Crie uma rota POST e mude o body de json para multipart, mandando name e file (foto que representa sua categoria a ser criada).Usando url
+Create a POST route and change the body from json to multipart, sending name and file (photo that represents your category to be created).Using url
 ```
 http://localhost:3001/categories
 ```
-No campo Auth mude para bearer token e adicione o token gerado no login no campo de valor. E faça a requisição.
+In the Auth field, change it to bearer token and add the token generated at login to the value field. And make the request.
 
 <img src="https://github.com/stanley-rodrigues/picForReadme/blob/main/api%20Devburguer/cria%20categoria.png"/>
 
-Para visualizar todas as categorias, crie uma rota GET Usando url
+To view all the categories, create a GET route Using url:
 ```
 http://localhost:3001/categories
 ```
-No campo Auth mude para bearer token e adicione o token gerado no login no campo de valor. E faça a requisição.
+In the Auth field, change it to bearer token and add the token generated at login to the value field. And make the request.
 
-Para editar alguma categoria, crie uma rota PUT Usando url e após a / adicione o id gerado na criação da categoria. Para buscar o id de uma categoria basta acessa a rota GET.Mude o body de json para multipart e mande name com o nome que você colocar com valor 
+To edit a category, create a PUT route Using url and after / add the id generated when creating the category. To retrieve the id of a category, simply access the GET route. Change the body from json to multipart and send name with the name you set with the value:
 ```
 http://localhost:3001/categories/
 ```
-No campo Auth mude para bearer token e adicione o token gerado no login no campo de valor. E faça a requisição.
+He Auth field, change it to bearer token and add the token generated at login to the value field. And make the request.
 
-### Rota produtos
+### Product route
 
-Crie uma rota POST e mude o body de json para multipart, mandando name, price, category_id(id que é gerado a cada criação de uma categoria, escolha a que melhor representa seu produto) e file (foto que representa seu produto a ser criado).Usando url
+Create a POST route and change the body from json to multipart, sending name, price, category_id(id that is generated each time a category is created, choose the one that best represents your product) and file (photo that represents your product to be created).Using url:
 ```
 http://localhost:3001/products
 ```
 
-No campo Auth mude para bearer token e adicione o token gerado no login no campo de valor. E faça a requisição.
+In the Auth field, change it to bearer token and add the token generated at login to the value field. And make the request.
 
 <img src="https://github.com/stanley-rodrigues/picForReadme/blob/main/api%20Devburguer/produtos.png"/>
 
-Para visualizar todas os produtos, crie uma rota GET Usando url
+To view all the products, create a GET route Using url
 ```
 http://localhost:3001/products
 ```
-No campo Auth mude para bearer token e adicione o token gerado no login no campo de valor. E faça a requisição.
+In the Auth field, change it to bearer token and add the token generated at login to the value field. And make the request.
 
-Para editar algum produto, crie uma rota PUT Usando url e após a / adicione o id gerado na criação do produto. Para buscar o id de um produto basta acessa a rota GET.Mude o body de json para multipart e mande offer sendo true ou false(se desejar) name(se desejar) file(se desejar)
+To edit a product, create a PUT route Using url and after / add the id generated when creating the product. Change the body from json to multipart and send offer as true or false (if desired) name (if desired) file (if desired).
+
 ```
 http://localhost:3001/products/
 ```
-No campo Auth mude para bearer token e adicione o token gerado no login no campo de valor. E faça a requisição.
+In the Auth field, change it to bearer token and add the token generated at login to the value field. And make the request.
 
 <img src="https://github.com/stanley-rodrigues/picForReadme/blob/main/api%20Devburguer/editproduto.png"/>
 
-### Rota pedidos
+### Order route
 
-Crie uma rota POST, mandando um array products com objeto contendo id e quantity. id é referente ao id do produto(para buscar o id de um produto basta acessa a rota GET) e quantity a quantidade desejada do item.Usando url
+Create a POST route, sending an array products with an object containing id and quantity. id refers to the id of the product (to search for the id of a product just access the GET route) and quantity the desired quantity of the item.Using url:
 ```
 http://localhost:3001/orders
 ```
 
-No campo Auth mude para bearer token e adicione o token gerado no login no campo de valor. E faça a requisição.
+In the Auth field, change it to bearer token and add the token generated at login to the value field. And make the request.
 <img src="https://github.com/stanley-rodrigues/picForReadme/blob/main/api%20Devburguer/criarpedido.png"/>
 
-Para visualizar o pedido, crie uma rota GET Usando url
+To view the request, create a GET route Using url:
 ```
 http://localhost:3001/orders
 ```
-No campo Auth mude para bearer token e adicione o token gerado no login no campo de valor. E faça a requisição.
+In the Auth field, change it to bearer token and add the token generated at login to the value field. And make the request.
 
-Para editar algum pedido, crie uma rota PUT Usando url e após a / adicione o id gerado na criação do pedido. Para buscar o id de um pedido basta acessa a rota GET.Mandado status e a mensagem desejada no body
+To edit an order, create a PUT route Using url and after / add the id generated when creating the order. To search for the id of an order, simply access the GET route.Mandado status and the desired message in the body
 ```
 http://localhost:3001/orders/
 ```
-No campo Auth mude para bearer token e adicione o token gerado no login no campo de valor. E faça a requisição.
+In the Auth field, change it to bearer token and add the token generated at login to the value field. And make the request.
 
 <img src="https://github.com/stanley-rodrigues/picForReadme/blob/main/api%20Devburguer/editorder.png"/>
 
-## Usuário cliente logado
+## Client user logged in
 
-Na rota POST e mande pelo body: name,email,password e admin sendo false (para usuário cliente).Usando url
+In the POST route and send through the body: name,email,password and admin being false (for client user).Using url:
 ```
 http://localhost:3001/users
 ```
 
 <img src="https://github.com/stanley-rodrigues/picForReadme/blob/main/api%20Devburguer/user.png"/>
 
-Na rota POST e mande pelo body: email e password. Ao logar será gerado um token (guarde pois será utilizados nas demais rotas).Usando url.
+In the POST route and send through the body: email and password. When you log in, a token will be generated (save it as it will be used in the other routes).Using url.
 ```
 http://localhost:3001/sessions
 ```
 
 <img src="https://github.com/stanley-rodrigues/picForReadme/blob/main/api%20Devburguer/login.png"/>
 
-### Rota pedidos cliente
+### Customer order route
 
-Na POST, mandando um array products com objeto contendo id e quantity. id é referente ao id do produto(para buscar o id de um produto basta acessa a rota GET) e quantity a quantidade desejada do item.Usando url
+In the POST, sending an array products with an object containing id and quantity. id refers to the id of the product (to search for the id of a product just access the GET route) and quantity the desired quantity of the item.Using url:
 ```
 http://localhost:3001/orders
 ```
 
-No campo Auth mude para bearer token e adicione o token gerado no login no campo de valor. E faça a requisição.
+In the Auth field, change it to bearer token and add the token generated at login to the value field. In the Auth field, change to bearer token and add the token generated at login to the value field. And make the request.
 <img src="https://github.com/stanley-rodrigues/picForReadme/blob/main/api%20Devburguer/criarpedido.png"/>
 
-Para visualizar o pedido, crie uma rota GET Usando url
+To view the request, create a GET route Using url:
 ```
 http://localhost:3001/orders
 ```
-No campo Auth mude para bearer token e adicione o token gerado no login no campo de valor. E faça a requisição.
+In the Auth field, change it to bearer token and add the token generated at login to the value field. And make the request.
 
+## Developer
+Developed by Cleber.
+
+:email: 
+
+
+</br>
+</br>
+<a href="https://www.linkedin.com/in/cleberalvesnunes/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+<a href="https://github.com/kreby4555"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /></a>
 
 
