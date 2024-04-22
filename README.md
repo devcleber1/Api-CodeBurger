@@ -1,6 +1,11 @@
 # :closed_lock_with_key: CodeBurger API 
 #### :wind_chime: This is a Hamburger API project to manage orders and products in a hamburger shop. Developed with Node.js and Express, using a variety of tools and technologies to offer a robust and scalable solution. This API has been specially designed for integration with PostgreSQL and MongoDB databases, using Docker to facilitate the management and deployment of these databases. It follows the MVC (Model-View-Controller) architecture for an organized and scalable structure, like PostgreSQL.
 
+![api](https://github.com/kreby4555/Api-CodeBurger/assets/108768059/3dd07b6a-6ee6-430b-9afc-6ee98dab963a)
+
+
+
+
 ## Index
 [Installation](#Installation)
 
@@ -18,7 +23,7 @@
 
 [Customer order route](#Customer-order-route)
 
-[Developer](#Devveloper)
+[Developer](#Developer)
 
 ## Installation
 Install the following tools: 
