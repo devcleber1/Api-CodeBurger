@@ -232,7 +232,7 @@ In the Auth field, change it to bearer token and add the token generated at logi
 ## Developer
 Developed by Cleber.
 
-:email: 
+:email: devvcleber@outlook.com
 
 
 </br>
