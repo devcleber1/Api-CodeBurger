@@ -1,5 +1,5 @@
 {
-  "name": "api-codeburger",
+  "name": "api-inventario",
   "version": "1.0.0",
   "description": "",
   "main": "src/server.js",
@@ -8,8 +8,7 @@
     "dev": "nodemon",
     "debug": "nodemon --inspect"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Cleber",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
